@@ -1,0 +1,11 @@
+sources:
+  - name: lake
+    schema: lake
+    description: "Données brutes extraites par le job Python."
+    tables:
+      - name: artists_search
+        description: "Artistes récupérés depuis l'API Spotify par genre."
+      - name: artists_albums
+        description: "Albums récupérés depuis l'API Spotify par artiste."
+      - name: titres
+        description: "Titres récupérés depuis l'API Spotify par album."

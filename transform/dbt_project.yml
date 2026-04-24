@@ -1,0 +1,27 @@
+name: "spotify_etl"
+version: "1.0.0"
+config-version: 2
+
+profile: "spotify_etl"
+
+model-paths: ["models"]
+test-paths: ["tests"]
+analysis-paths: ["analyses"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  spotify_etl:
+    1_staging:
+      +materialized: table      # les staging sont des vues, légères et toujours à jour
+      +schema: staging
+    2_intermediate:
+      +materialized: table     # les intermédiaires sont des tables, optimisées pour les transformations
+      +schema: intermediate
+    3_mart:
+      +materialized: table     # les mart sont des tables, optimisées pour la lecture
+      +schema: mart

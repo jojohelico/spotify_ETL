@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: stg_artistes
+    description: "Artistes nettoyés et normalisés depuis lake.artists_search."
+    columns:
+      - name: artiste_id
+        description: "Identifiant unique Spotify."
+        data_type: text
+        tests:
+          - not_null
+          - unique
+      - name: nom
+        description: "Nom de l'artiste."
+        data_type: text
+        tests:
+          - not_null
+      - name: style
+        description: "Genre utilisé pour la recherche."
+        data_type: text
+        tests:
+          - not_null
