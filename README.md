@@ -95,13 +95,3 @@ dbt run-operation generate_model_yaml --args '{"model_names": ["stg_artistes"]}'
 # Ouvre une interface web locale pour visualiser les modèles
 dbt docs serve
 ```
-
----
-
-## Note SSL (réseau DIIAGE)
-
-Si tu rencontres des erreurs SSL :
-
-```bash
-git config http.sslVerify false
-```
